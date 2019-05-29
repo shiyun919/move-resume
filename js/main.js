@@ -55,6 +55,11 @@ html{
    width:47.5%;  
    border: 1px solid #fff;
    padding: 20px;
+   font-size: 14px;
+   height:95%;
+   overflow: auto;
+   position: fixed;
+   left: 20px;
 }
 
 /* 我需要一点代码高亮 */
@@ -81,6 +86,14 @@ html{
 #paper {
    width:47.5%;
    background: #fff;
+   position: fixed;
+   right:10px;
+   font-size:14px;
+   color: #333;
+   padding: 20px;
+   margin: 0px 10px;
+   height: 95%;
+   overflow: auto;
 }
 
 /* 于是我就可以在白纸上简单介绍我自己了 */
@@ -93,22 +106,24 @@ var result2 = `
 `
 var md = `
 ## 自我介绍
-我叫石云
-1991年9月19日出生
-大专
-毕业于武汉工程大学-电子信息工程技术专业
-从事前端工作1年
+我叫石云，
+1991年9月19日出生，
+大专-毕业于武汉工程大学-电子信息工程技术专业，
+从事前端工作1年，
 希望于贵公司应聘前端开发岗位
+
 ## 技能介绍
 - 熟悉HTML/CSS3
 - 熟悉javaScript
 - 熟悉Bootstrap框架/Vue框架/React框架
 - 熟练使用图形设计软件photoshop/Axure
+
 ## 项目介绍
 1. canvas画板
 2. 快捷导航
 3. Apple-Style轮播
 4. 今塑网-小程序
+
 ## 联系方式
 - 手机 18930811995
 - QQ 1280752762
@@ -147,7 +162,7 @@ function createPaper(fn){
 }
 
 function convertMarkdownToHtml(fn){
-  var div = document.createElement('pre')  
+  var div = document.createElement('div')  
   div.className = 'html markdown-body'
   div.innerHTML = marked(md)
   let markdownContainer = document.querySelector('#paper > .content')
