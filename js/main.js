@@ -31,7 +31,7 @@ function writeMarkdown(prefix, markdown, fn){
 			window.clearInterval(id)
 			fn.call()
 		}
-	},20)
+	},30)
 }
 
 var result1 =  `/*
